@@ -1,0 +1,82 @@
+<nav>
+    <div class="nav-title">Land Details</div>
+  </nav>
+  
+  
+  <div class="example-container ">
+   
+    <table mat-table [dataSource]="dataSource"  
+      class="mat-elevation-z8 table table-bordered table-striped table-hover"  >
+  
+     
+      <ng-container matColumnDef="ReqId">
+        <th mat-header-cell *matHeaderCellDef  text-center> ReqId </th>
+        <td mat-cell *matCellDef="let element"> {{element.ReqId}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="ownersName">
+        <th mat-header-cell *matHeaderCellDef  > ownersName </th>
+        <td mat-cell *matCellDef="let element"> {{element.ownersName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="village">
+        <th mat-header-cell *matHeaderCellDef > village</th>
+        <td mat-cell *matCellDef="let element"> {{element.village}} </td>
+      </ng-container>
+      <ng-container matColumnDef="mandal">
+        <th mat-header-cell *matHeaderCellDef > mandal</th>
+        <td mat-cell *matCellDef="let element"> {{element.mandal}} </td>
+      </ng-container>
+      <ng-container matColumnDef="district">
+        <th mat-header-cell *matHeaderCellDef > district</th>
+        <td mat-cell *matCellDef="let element"> {{element.district}} </td>
+      </ng-container>
+      <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef > state</th>
+        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+      </ng-container>
+      <ng-container matColumnDef="pincode">
+        <th mat-header-cell *matHeaderCellDef > pincode</th>
+        <td mat-cell *matCellDef="let element"> {{element.pincode}} </td>
+      </ng-container>
+      <ng-container matColumnDef="surveyNumber">
+        <th mat-header-cell *matHeaderCellDef > surveyNumber</th>
+        <td mat-cell *matCellDef="let element"> {{element.surveyNumber}} </td>
+      </ng-container>
+      <ng-container matColumnDef="extentofLand">
+        <th mat-header-cell *matHeaderCellDef > extentofLand</th>
+        <td mat-cell *matCellDef="let element"> {{element.extentofLand}} </td>
+      </ng-container>
+      <ng-container matColumnDef="services">
+        <th mat-header-cell *matHeaderCellDef > services</th>
+        <td mat-cell *matCellDef="let element"> {{element.services}} </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef > status</th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="updateRequestStatus(element)">
+            accept
+          </button>
+        </td>
+      </ng-container>
+      <!-- <ng-container matColumnDef="upload">
+        <th mat-header-cell *matHeaderCellDef>Upload</th>
+        <td mat-cell *matCellDef="let element">
+            <input type="file" #fileInput>
+            <button (click)="upload(fileInput,element)">Upload</button>
+        </td>
+      </ng-container> -->
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" style="height:10px;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height:1px; padding :1px"></tr>
+    </table>
+
+    
+  </div>
+  
+  
+  

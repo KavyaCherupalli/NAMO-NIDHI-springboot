@@ -1,0 +1,15 @@
+p{
+    margin-top: 8px;
+}
+
+#app{
+    color: crimson;
+}
+
+.navbar-dark .navbar-brand {
+    color: royalblue;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: royalblue;
+}

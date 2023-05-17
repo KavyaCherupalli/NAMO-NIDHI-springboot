@@ -1,0 +1,96 @@
+ 
+    <mat-vertical-stepper [linear]="false" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="onFirstSubmit()">
+          <ng-template matStepLabel>Fill out Land details</ng-template>
+          <div class="form-group">
+            <label for="Owners Name">Owners Name</label>
+            <input  type="text" class="form-control"   formControlName="ownersName" />
+          </div>
+
+          <div class="form-group">
+            <label for="village/city">village</label>
+            <input type="text" class="form-control" formControlName="village" /> 
+          </div>
+
+          <div class="form-group">
+            <label for="Mandal">Mandal</label>
+            <input  type="text"  class="form-control" formControlName="mandal"  />
+          </div>
+
+          <div class="form-group">
+            <label for="state">state</label>
+            <input  type="text" class="form-control" formControlName="state"/>
+          </div>
+          
+          <div class="form-group">
+            <label for="district">district</label>
+            <input type="text"  class="form-control" formControlName="district"/>
+          </div>
+          <div class="form-group">
+            <label for="pincode">pincode</label>
+            <input  type="text" class="form-control" formControlName="pincode"/>
+          </div>
+
+          <div class="form-group">
+            <label for="surveyNumber">surveyNumber</label>
+            <input type="text"
+              class="form-control" formControlName="surveyNumber" />
+          </div>
+
+          <div class="form-group">
+            <label for="extentofLand">extentofLand</label>
+            <input type="text" class="form-control" formControlName="extentofLand" required  />
+          </div>
+
+          <div class="form-group">
+            <label for="services">services</label>
+            <select class="form-control" formControlName="services" >
+              <option>EC</option>
+              <option>CC</option>
+              <option>Land Photo</option>
+              
+            </select>
+          </div>
+
+          <div>
+            <button type="submit" mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!--include payment details-->
+
+      <!-- <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup"  (ngSubmit)="onSecondSubmit()">
+          <ng-template matStepLabel>select the services</ng-template>
+          <div class="form-group">
+            <label for="Certificate">Certificate</label>
+            <input type="text"
+              class="form-control" formControlName="Certificate" />
+          </div>
+          <div class="form-group">
+            <label for="landphoto">landphoto</label>
+            <input type="text"
+              class="form-control" formControlName="landphoto" />
+          </div>
+          <div class="form-group">
+            <label for="CCcamera">CCcamera</label>
+            <input type="text"
+              class="form-control" formControlName="CCcamera" />
+          </div>
+        
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step> -->
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>

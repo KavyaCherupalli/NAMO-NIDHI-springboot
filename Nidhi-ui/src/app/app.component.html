@@ -1,0 +1,58 @@
+
+  
+   <div id="app">
+    <nav class="navbar navbar-expand navbar-dark" style="background-color:#FFBF00;">
+      <a href="#" class="navbar-brand">Namo Nidhi</a>
+      <ul class="navbar-nav mr-auto" >
+       
+        <li class="nav-item" *ngIf="showAdminBoard" >
+           <a  class="nav-link" routerLink="/viewUsers" routerLinkActive >RegisteredUsers</a> 
+           </li>
+           <li class="nav-item" *ngIf="showAdminBoard" >
+          <a  class="nav-link" routerLink="/viewLand">LandPendingRequest</a>
+        </li>
+        
+        
+        <li class="nav-item" *ngIf="showUserDashboard" routerLinkActive>
+          <a  class="nav-link" routerLink="/land" >Land Details </a>
+          </li>
+          <li class="nav-item" *ngIf="showUserDashboard">
+          <a  class="nav-link" routerLink="/requestStatus">RequestStatus</a>
+        </li>
+        
+        
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item"   >
+          <a  class="nav-link" routerLink="/home">Home </a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" routerLink="/register">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" routerLink="/login" routerLinkActive>Login</a>
+        </li>
+
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        
+        <li class="nav-item" *ngIf="showUserDashboard">
+          <p class="nav-item">Username : {{username1}}</p>
+        </li>
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <p>Username : {{username1}}</p>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+        
+       
+      </ul>
+    </nav>
+  
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
